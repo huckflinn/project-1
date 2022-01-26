@@ -1,0 +1,4 @@
+[debug] [project-1-test] Classpath dependencies List()
+[debug] [project-1-test] Dependencies from configurations List(project-1)
+[debug] Bloop wrote the configuration of project 'project-1-test' to '/Users/RoverOne/Development/Revature/Projects/project-1/.bloop/project-1-test.json'
+[success] Generated .bloop/project-1-test.json

@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/RoverOne/Development/Revature/Projects/project-1/target/scala-2.13/project1_2.13-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UserInputException$$anonfun$$lessinit$greater$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/RoverOne/Development/Revature/Projects/project-1/target/scala-2.13/classes/UserInputException$$anonfun$$lessinit$greater$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Project1$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/RoverOne/Development/Revature/Projects/project-1/target/scala-2.13/classes/Project1$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UserInputException.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/RoverOne/Development/Revature/Projects/project-1/target/scala-2.13/classes/UserInputException.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Project1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/RoverOne/Development/Revature/Projects/project-1/target/scala-2.13/classes/Project1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
