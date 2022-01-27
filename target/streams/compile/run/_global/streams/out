@@ -1,14 +1,16 @@
-[0m[[0m[31merror[0m] [0m[0mjava.sql.SQLException: Illegal operation on empty result set.[0m
+[0m[[0m[31merror[0m] [0m[0mjava.sql.SQLException: Before start of result set[0m
 [0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)[0m
 [0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)[0m
 [0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)[0m
 [0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)[0m
 [0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:517)[0m
 [0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:204)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:870)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:888)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.login(Project1.scala:159)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.main(Project1.scala:33)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1314)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:822)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:843)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.getLoggedInUser(Project1.scala:156)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.login(Project1.scala:169)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.main(Project1.scala:46)[0m
 [0m[[0m[31merror[0m] [0m[0m	at Project1.main(Project1.scala)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)[0m
@@ -27,4 +29,4 @@
 [0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:748)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) java.sql.SQLException: Illegal operation on empty result set.[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) java.sql.SQLException: Before start of result set[0m

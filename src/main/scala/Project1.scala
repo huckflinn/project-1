@@ -11,6 +11,14 @@ object Project1 {
     private var scanner = new Scanner(System.in)
     private var statement: Statement = null
     private val log = new PrintWriter(new File("query.log"))
+    private var resultSet: ResultSet = null
+    private var usersTable: ResultSet = null
+    private var individualRecord: ResultSet = null
+    private var loggedInUser: ResultSet = null
+    private var loggedInUserID: Int = 0
+    private var loggedInUsername: String = "null"
+    private var loggedInPassword: String = "null"
+    private var loggedInAccountType: String = "null"
 
     def main(args: Array[String]): Unit = {
 
@@ -36,6 +44,9 @@ object Project1 {
 
             if (nextStep == "2") {
                 login()
+                var accountType = loggedInUser.getString("user_type")
+                if (accountType == "user") userMenu()
+                else adminMenu()
             }
 
             if (nextStep == "3") {
@@ -139,6 +150,18 @@ object Project1 {
         println("")
     }
 
+    def getLoggedInUser(username: String): Unit = {
+        log.write("Executing 'SELECT * FROM users WHERE username = \"$username\";'")
+        loggedInUser = statement.executeQuery(s"SELECT * FROM users WHERE username = \"$username\";")
+        while (loggedInUser.next()) {
+            loggedInUserID = loggedInUser.getInt("user_id")
+            loggedInUsername = loggedInUser.getString("username")
+            loggedInPassword = loggedInUser.getString("password")
+            loggedInAccountType = loggedInUser.getString("user_type")
+        }
+        loggedInUser.beforeFirst()
+    }
+
     def login(): Unit = {    
         var loginAttempt = true
         while (loginAttempt) {
@@ -146,36 +169,26 @@ object Project1 {
             println("")
             print("Username: ")
             var loginUsername = scanner.next().toString()
-            var resultSet = statement.executeQuery(s"SELECT username, password, user_type FROM users WHERE username = \"$loginUsername\";")
-            log.write("Executing 'SELECT username, password, user_type FROM users WHERE username = \"$loginUsername\";'")
-            var invalidUsername = true
-            if (!resultSet.next()) {
+            getLoggedInUser(loginUsername)
+
+            if (!loggedInUser.next()) {
                 loginAttempt = true
                 println("")
                 println("Sorry, that's not a valid username.")
             }
+
             else {
-                var correctUsername = resultSet.getString("username")
-                var correctPassword = resultSet.getString("password")
                 var invalidPassword = true
                 while (invalidPassword) {
                     invalidPassword = false
                     print("Password: ")
                     var loginPassword = scanner.next().toString()
-                    if (loginPassword != correctPassword) {
+
+                    if (loginPassword != loggedInPassword) {
                         invalidPassword = true
                         println("")
                         println("Sorry, that's not the correct password. Please try entering it again.")
                         println("")
-                    }
-                    else {
-                        var loginAccountType = resultSet.getString("user_type")
-                        if (loginAccountType == "user") {
-                            userMenu()
-                        }
-                        else if (loginAccountType == "admin") {
-                            adminMenu()
-                        }
                     }
                 }
             }
@@ -223,20 +236,171 @@ object Project1 {
             println("")
             println("Please choose one of the options below.")
             println("1: View users table")
-            println("2: Log out")
-            var userChoice = scanner.next().toString()
+            println("2: Get COVID-19 data")
+            println("3: Log out")
+            println("")
+            var adminChoice = scanner.next().toString()
 
-            if (userChoice == "1") {
-                println("")
-                println("adminMenu Test Successful")
+            if (adminChoice == "1") {
+                viewUsersTable()
             }
-
-            else if (userChoice == "2") {
+            else if (adminChoice == "2") {
+                // covidDataMenu()
+            }
+            else if (adminChoice == "3") {
                 continueAdminMenu = false
                 println("")
                 println("Thanks for stopping by!")
             }
+            else {
+                println("")
+                println("I'm sorry, that's not one of the available options. Please try again.")
+            }
         }
     }
 
+    def getUsersTable(): Unit = {
+        log.write("Executing 'SELECT * FROM users;'")
+        usersTable = statement.executeQuery(s"SELECT * FROM users")
+    }
+
+    def getIndividualRecord(id: Int): Unit = {
+        log.write("Executing 'SELECT * FROM users;'")
+        individualRecord = statement.executeQuery(s"SELECT * FROM users WHERE id = $id;")
+    }
+
+    def viewUsersTable(): Unit = {
+        var continueUsersTable = true
+        while (continueUsersTable) {
+            println("")
+            getUsersTable()
+            while (usersTable.next()) {
+                var id = usersTable.getInt("user_id")
+                var username = usersTable.getString("username")
+                var password = usersTable.getString("password")
+                var user_type = usersTable.getString("user_type")
+                println(s"ID: $id ::: Username: $username ::: Password: $password ::: Account Type: $user_type")
+            }
+
+            println("")
+            println("Please choose one of the options below.")
+            println("1: Edit user information")
+            println("2: Delete user")
+            println("3: Back")
+            println("")
+            var choice = scanner.next().toString()
+
+            if (choice == 1) {
+                // editUser()
+            }
+
+            else if (choice == "2") {
+                // deleteUser()
+            }
+
+            else if (choice == "3") {
+                if (loggedInAccountType == "user") userMenu()
+                else adminMenu()
+                // adminMenu() || userMenu()
+                // How to distinguish which one?
+                // Instance variable for loggedInUser?
+                // getLoggedInUser() method?
+            }
+        }
+    }
+
+    def editUser(): Unit = {
+        var continueEditUser = true
+        while (continueEditUser) {
+            println("")
+            println("Please select a user to edit by entering their ID number.")
+            var whichUser = scanner.next().toString()
+            getIndividualRecord(whichUser.toInt)
+
+            if (!individualRecord.next()) {
+                println("")
+                println("That user does not exist. Please try again.")
+            }
+
+            else {
+                var continueWhichInfo = true
+                while (continueWhichInfo) {
+                    println("")
+                    println("What information do you want to edit?")
+                    println("1: Username")
+                    println("2: Password")
+                    println("3: Account Type")
+                    println("4: Back")
+                    println("")
+                    var whichInfo = scanner.next().toString()
+
+                    if (whichInfo == "1") {
+                        println("")
+                        println("Okay. Please enter a new username.")
+                        println("")
+                        var newUsername = scanner.next().toString()
+                        resultSet.updateString("username", newUsername)
+                        println("Great! The new username has been saved.")
+                    }
+
+                    else if (whichInfo == "2") {
+                        println("")
+                        println("Okay. Please enter a new password.")
+                        println("")
+                        var newPassword = scanner.next().toString()
+                        resultSet.updateString("password", newPassword)
+                        println("Great! The new password has been saved.")
+                    }
+
+                    else if (whichInfo == "3") {
+                        var continueWhichType = true
+                        while (continueWhichType) {
+                            println("")
+                            println("Please choose which account type this user should be.")
+                            println("1: USER")
+                            println("2: ADMIN")
+                            println("")
+                            var newType = scanner.next().toString()
+                            if (newType == "1" || newType == "2") {
+                                var userType = if (newType == "1") "user" else "admin"
+                                continueWhichInfo = false
+                                resultSet.updateString("user_type", userType)
+                                println("Great! This user's account type has been changed.")
+                            }
+                            else {
+                                println("")
+                                println("I'm sorry, that's not one of the available options.")
+                            }
+                        }
+                    }
+
+                    else if (whichInfo == "4") {
+                        viewUsersTable()
+                    }
+
+                    else {
+                        println("")
+                        println("I'm sorry, that's not one of the available options.")
+                    }
+                }
+            }
+        }
+    }
+
+    def getCovidData(): Unit = {
+        var continueCovidMenu = true
+        while (continueCovidMenu) {
+            println("")
+            println("Please choose one of the options below.")
+            println("1: Countries with the top 10 highest number of COVID cases.")
+            println("2: Countries with the bottom 10 highest number of COVID cases.")
+            println("3: Countries with the top 10 mortality rates.")
+            println("4: Countries with the bottom 10 mortality rates.")
+            println("5: Countries with the top 10 recovery rates.")
+            println("6: Countries with the bottom 10 recovery rates.")
+            println("7: Log out")
+            println("")
+            var userChoice = scanner.next().toString()
+        }
+    }
 }
