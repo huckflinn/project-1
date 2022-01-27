@@ -1,16 +1,25 @@
-[0m[[0m[31merror[0m] [0m[0mjava.sql.SQLException: Before start of result set[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:517)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:204)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1314)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:822)[0m
-[0m[[0m[31merror[0m] [0m[0m	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:843)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.getLoggedInUser(Project1.scala:156)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.login(Project1.scala:169)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.main(Project1.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0morg.apache.spark.sql.catalyst.parser.ParseException: [0m
+[0m[[0m[31merror[0m] [0m[0mmismatched input 'DYNAMIC' expecting {<EOF>, ';'}(line 1, pos 503)[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m== SQL ==[0m
+[0m[[0m[31merror[0m] [0m[0mCREATE TABLE IF NOT EXISTS covid_vax_data_partitioned (date STRING, total_vaccinations DOUBLE, total_distributed DOUBLE, people_vaccinated DOUBLE, people_fully_vaccinated_per_hundred FLOAT, total_vaccinations_per_hundred FLOAT, people_fully_vaccinated DOUBLE, people_vaccinated_per_hundred FLOAT, distributed_per_hundred FLOAT, daily_vaccinations_raw DOUBLE, daily_vaccinations DOUBLE, daily_vaccinations_per_million DOUBLE, share_doses_used FLOAT, total_boosters INT, total_boosters_per_hundred FLOAT) DYNAMIC PARTITIONED BY (location STRING) CLUSTERED BY (date) INTO 10 BUCKETS row format delimited fields terminated by ',' stored as textfile[0m
+[0m[[0m[31merror[0m] [0m[0m-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------^^^[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.parser.ParseException.withCommand(ParseDriver.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.parser.AbstractSqlParser.parse(ParseDriver.scala:126)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkSqlParser.parse(SparkSqlParser.scala:51)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.parser.AbstractSqlParser.parsePlan(ParseDriver.scala:77)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession.$anonfun$sql$2(SparkSession.scala:616)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:111)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession.$anonfun$sql$1(SparkSession.scala:616)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:613)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:651)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.insertCovidData(Project1.scala:502)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.covidDataMenu(Project1.scala:446)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.adminMenu(Project1.scala:271)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.mainMenu(Project1.scala:82)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.main(Project1.scala:59)[0m
 [0m[[0m[31merror[0m] [0m[0m	at Project1.main(Project1.scala)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)[0m
@@ -29,4 +38,9 @@
 [0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:748)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) java.sql.SQLException: Before start of result set[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) org.apache.spark.sql.catalyst.parser.ParseException: [0m
+[0m[[0m[31merror[0m] [0m[0mmismatched input 'DYNAMIC' expecting {<EOF>, ';'}(line 1, pos 503)[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m== SQL ==[0m
+[0m[[0m[31merror[0m] [0m[0mCREATE TABLE IF NOT EXISTS covid_vax_data_partitioned (date STRING, total_vaccinations DOUBLE, total_distributed DOUBLE, people_vaccinated DOUBLE, people_fully_vaccinated_per_hundred FLOAT, total_vaccinations_per_hundred FLOAT, people_fully_vaccinated DOUBLE, people_vaccinated_per_hundred FLOAT, distributed_per_hundred FLOAT, daily_vaccinations_raw DOUBLE, daily_vaccinations DOUBLE, daily_vaccinations_per_million DOUBLE, share_doses_used FLOAT, total_boosters INT, total_boosters_per_hundred FLOAT) DYNAMIC PARTITIONED BY (location STRING) CLUSTERED BY (date) INTO 10 BUCKETS row format delimited fields terminated by ',' stored as textfile[0m
+[0m[[0m[31merror[0m] [0m[0m-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------^^^[0m

@@ -1,7 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/RoverOne/Development/Revature/Projects/Project1/src/main/scala/Project1.scala:102:13: not found: value newPassword[0m
-[0m[[0m[31merror[0m] [0m[0m            newPassword = scanner.next().toString()[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/RoverOne/Development/Revature/Projects/Project1/src/main/scala/Project1.scala:103:17: not found: value newPassword[0m
-[0m[[0m[31merror[0m] [0m[0m            if (newPassword == "") {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0m2 deprecations (since 2.0.0); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
