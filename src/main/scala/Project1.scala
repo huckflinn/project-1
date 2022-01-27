@@ -3,11 +3,14 @@ import java.sql.DriverManager
 import java.sql.Connection
 import java.sql.ResultSet
 import java.sql.Statement
+import java.io.PrintWriter
+import java.io.File
 
 object Project1 {
 
-    private val scanner = new Scanner(System.in)
+    private var scanner = new Scanner(System.in)
     private var statement: Statement = null
+    private val log = new PrintWriter(new File("query.log"))
 
     def main(args: Array[String]): Unit = {
 
@@ -15,6 +18,8 @@ object Project1 {
         val url = "jdbc:mysql://localhost:3306/project1"
         val username = "root"
         val password = "y6F*_03jgN2"
+
+        scanner.useDelimiter(System.lineSeparator())
 
         Class.forName(driver)
         val connection = DriverManager.getConnection(url, username, password)
@@ -38,6 +43,8 @@ object Project1 {
             }
         }
 
+        connection.close()
+        log.close()
         println("You have exited the program. Bye!")
 
     }
@@ -52,13 +59,12 @@ object Project1 {
         println("3: Exit")
         println("")
 
-        // scanner.useDelimiter(System.lineSeparator())
-                // var choice = scanner.next().toString().toUpperCase()
         return scanner.next().toString()
     }
 
     def createAccount(): Unit = {
         var resultSet = statement.executeQuery("SELECT username FROM users;")
+        log.write("Executing 'SELECT username FROM users;'")
         println("")
         println("Alright! Let's get you set up.")
         println("")
@@ -126,6 +132,7 @@ object Project1 {
         }
         
         statement.executeUpdate(s"INSERT INTO users (username, password, user_type) VALUES (\"$newUsername\", \"$newPassword\", \"$accountType\");")
+        log.write("Executing 'INSERT INTO users (username, password, user_type) VALUES (\"$newUsername\", \"$newPassword\", \"$accountType\");'")
 
         println("")
         print("Nice! You're all set up!")
@@ -140,6 +147,7 @@ object Project1 {
             print("Username: ")
             var loginUsername = scanner.next().toString()
             var resultSet = statement.executeQuery(s"SELECT username, password, user_type FROM users WHERE username = \"$loginUsername\";")
+            log.write("Executing 'SELECT username, password, user_type FROM users WHERE username = \"$loginUsername\";'")
             var invalidUsername = true
             if (!resultSet.next()) {
                 loginAttempt = true
@@ -154,62 +162,81 @@ object Project1 {
                     invalidPassword = false
                     print("Password: ")
                     var loginPassword = scanner.next().toString()
-                    // resultSet.next()
-                    // var correctPassword = resultSet.getString("password")
                     if (loginPassword != correctPassword) {
                         invalidPassword = true
                         println("")
                         println("Sorry, that's not the correct password. Please try entering it again.")
                         println("")
                     }
+                    else {
+                        var loginAccountType = resultSet.getString("user_type")
+                        if (loginAccountType == "user") {
+                            userMenu()
+                        }
+                        else if (loginAccountType == "admin") {
+                            adminMenu()
+                        }
+                    }
                 }
             }
         }
-
-        println("")
-        println("login() Test Successful")
-
-        // userMenu()
     }
 
-    // def userMenu(): Unit = {
-    //     println("Good to see you! This is a COVID-19 data tracker. You can use it to get some basic information regarding the COVID-19 pandemic around the world.")
-    //     println("Please choose one of the options below.")
-    //     println("1: Countries with the top 10 highest number of COVID cases.")
-    //     println("2: Countries with the bottom 10 highest number of COVID cases.")
-    // }
+    def userMenu(): Unit = {
+        var continueUserMenu = true
+        while (continueUserMenu) {
+            println("")
+            println("Good to see you! This is a COVID-19 data tracker. You can use it to get some basic information regarding the COVID-19 pandemic around the world.")
+            println("")
+            println("Please choose one of the options below.")
+            println("1: Countries with the top 10 highest number of COVID cases.")
+            println("2: Countries with the bottom 10 highest number of COVID cases.")
+            println("3: Log out")
+            println("")
+            var userChoice = scanner.next().toString()
 
-    def adminLogin(): Unit = {
-        /*
-        var notValidUsername = true
-        while (notValidUsername) {
-            notValidUsername = false
-            print("Username: ")
-            var loginUsername = scanner.nextLine()
-            /*
-            if loginUsername IS NOT VALID {
-                notValidUsername = true
-                println("Sorry, that's not a valid username.")
+            if (userChoice == "1") {
+                println("")
+                println("Option 1 Test Successful")
             }
-        */
-        }
-
-        var notValidPassword = true
-        while (notValidPassword) {
-            notValidPassword = false
-            print("Password: ")
-            var loginPassword = scanner.nextLine()
-            /*
-            if loginPassword IS NOT VALID {
-                notValidPassword = true
-                println("Sorry, that's not the correct password.")
+            else if (userChoice == "2") {
+                println("")
+                println("Option 2 Test Successful")
             }
-            */
+            else if (userChoice == "3") {
+                continueUserMenu = false
+                println("")
+                println("Thanks for stopping by!")
+            }
+            else {
+                println("")
+                println("I'm sorry, that's not one of the available options. Please try again.")
+            }
         }
-        */
-
-        println("adminLogin() Test Successful")
-
-        // adminMenu()
     }
+
+    def adminMenu(): Unit = {
+        var continueAdminMenu = true
+        while (continueAdminMenu) {
+            println("")
+            println("Good to see you! This is a COVID-19 data tracker. You can use it to get some basic information regarding the COVID-19 pandemic around the world.")
+            println("")
+            println("Please choose one of the options below.")
+            println("1: View users table")
+            println("2: Log out")
+            var userChoice = scanner.next().toString()
+
+            if (userChoice == "1") {
+                println("")
+                println("adminMenu Test Successful")
+            }
+
+            else if (userChoice == "2") {
+                continueAdminMenu = false
+                println("")
+                println("Thanks for stopping by!")
+            }
+        }
+    }
+
 }
