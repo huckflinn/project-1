@@ -16,9 +16,9 @@
         ],
         "classpath": [
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.7/scala-library-2.13.7.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-core_2.13/3.2.0/spark-core_2.13-3.2.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sql_2.13/3.2.0/spark-sql_2.13-3.2.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-hive_2.13/3.2.0/spark-hive_2.13-3.2.0.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-core_2.13/3.2.1/spark-core_2.13-3.2.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sql_2.13/3.2.1/spark-sql_2.13-3.2.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-hive_2.13/3.2.1/spark-hive_2.13-3.2.1.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.26/mysql-connector-java-8.0.26.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parallel-collections_2.13/1.0.3/scala-parallel-collections_2.13-1.0.3.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/avro/avro/1.10.2/avro-1.10.2.jar",
@@ -28,11 +28,11 @@
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/xbean/xbean-asm9-shaded/4.20/xbean-asm9-shaded-4.20.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.3.1/hadoop-client-api-3.3.1.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.1/hadoop-client-runtime-3.3.1.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.13/3.2.0/spark-launcher_2.13-3.2.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-kvstore_2.13/3.2.0/spark-kvstore_2.13-3.2.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.13/3.2.0/spark-network-common_2.13-3.2.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.13/3.2.0/spark-network-shuffle_2.13-3.2.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.13/3.2.0/spark-unsafe_2.13-3.2.0.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.13/3.2.1/spark-launcher_2.13-3.2.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-kvstore_2.13/3.2.1/spark-kvstore_2.13-3.2.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.13/3.2.1/spark-network-common_2.13-3.2.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.13/3.2.1/spark-network-shuffle_2.13-3.2.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.13/3.2.1/spark-unsafe_2.13-3.2.1.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/javax/activation/activation/1.1.1/activation-1.1.1.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/curator/curator-recipes/2.13.0/curator-recipes-2.13.0.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.6.2/zookeeper-3.6.2.jar",
@@ -76,19 +76,19 @@
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/ivy/ivy/2.5.0/ivy-2.5.0.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/oro/oro/2.0.8/oro-2.0.8.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/razorvine/pyrolite/4.30/pyrolite-4.30.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/py4j/py4j/0.10.9.2/py4j-0.10.9.2.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-tags_2.13/3.2.0/spark-tags_2.13-3.2.0.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/py4j/py4j/0.10.9.3/py4j-0.10.9.3.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-tags_2.13/3.2.1/spark-tags_2.13-3.2.1.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-crypto/1.1.0/commons-crypto-1.1.0.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/rocksdb/rocksdbjni/6.20.3/rocksdbjni-6.20.3.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/univocity/univocity-parsers/2.9.1/univocity-parsers-2.9.1.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.13/3.2.0/spark-sketch_2.13-3.2.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.13/3.2.0/spark-catalyst_2.13-3.2.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-core/1.6.11/orc-core-1.6.11.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-mapreduce/1.6.11/orc-mapreduce-1.6.11.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.13/3.2.1/spark-sketch_2.13-3.2.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.13/3.2.1/spark-catalyst_2.13-3.2.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-core/1.6.12/orc-core-1.6.12.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-mapreduce/1.6.12/orc-mapreduce-1.6.12.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/hive/hive-storage-api/2.7.2/hive-storage-api-2.7.2.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-column/1.12.1/parquet-column-1.12.1.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-hadoop/1.12.1/parquet-hadoop-1.12.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-column/1.12.2/parquet-column-1.12.2.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-hadoop/1.12.2/parquet-hadoop-1.12.2.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/hive/hive-common/2.3.9/hive-common-2.3.9.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/hive/hive-exec/2.3.9/hive-exec-2.3.9-core.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/hive/hive-metastore/2.3.9/hive-metastore-2.3.9.jar",
@@ -135,14 +135,14 @@
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/javax/xml/bind/jaxb-api/2.2.11/jaxb-api-2.2.11.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/arrow/arrow-vector/2.0.0/arrow-vector-2.0.0.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/arrow/arrow-memory-netty/2.0.0/arrow-memory-netty-2.0.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-shims/1.6.11/orc-shims-1.6.11.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-shims/1.6.12/orc-shims-1.6.12.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/airlift/aircompressor/0.21/aircompressor-0.21.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/threeten/threeten-extra/1.5.0/threeten-extra-1.5.0.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-common/1.12.1/parquet-common-1.12.1.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-encoding/1.12.1/parquet-encoding-1.12.1.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-format-structures/1.12.1/parquet-format-structures-1.12.1.jar",
-            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-jackson/1.12.1/parquet-jackson-1.12.1.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-common/1.12.2/parquet-common-1.12.2.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-encoding/1.12.2/parquet-encoding-1.12.2.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-format-structures/1.12.2/parquet-format-structures-1.12.2.jar",
+            "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-jackson/1.12.2/parquet-jackson-1.12.2.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/jline/jline/2.12/jline-2.12.jar",
             "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/tdunning/json/1.8/json-1.8.jar",
@@ -305,51 +305,51 @@
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-core_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-core_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-core_2.13/3.2.0/spark-core_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-core_2.13/3.2.1/spark-core_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-core_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-core_2.13/3.2.0/spark-core_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-core_2.13/3.2.1/spark-core_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-sql_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-sql_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sql_2.13/3.2.0/spark-sql_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sql_2.13/3.2.1/spark-sql_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-sql_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sql_2.13/3.2.0/spark-sql_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sql_2.13/3.2.1/spark-sql_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-hive_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-hive_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-hive_2.13/3.2.0/spark-hive_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-hive_2.13/3.2.1/spark-hive_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-hive_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-hive_2.13/3.2.0/spark-hive_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-hive_2.13/3.2.1/spark-hive_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
@@ -504,85 +504,85 @@
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-launcher_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-launcher_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.13/3.2.0/spark-launcher_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.13/3.2.1/spark-launcher_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-launcher_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.13/3.2.0/spark-launcher_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.13/3.2.1/spark-launcher_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-kvstore_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-kvstore_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-kvstore_2.13/3.2.0/spark-kvstore_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-kvstore_2.13/3.2.1/spark-kvstore_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-kvstore_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-kvstore_2.13/3.2.0/spark-kvstore_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-kvstore_2.13/3.2.1/spark-kvstore_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-network-common_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-network-common_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.13/3.2.0/spark-network-common_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.13/3.2.1/spark-network-common_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-network-common_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.13/3.2.0/spark-network-common_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.13/3.2.1/spark-network-common_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-network-shuffle_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-network-shuffle_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.13/3.2.0/spark-network-shuffle_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.13/3.2.1/spark-network-shuffle_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-network-shuffle_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.13/3.2.0/spark-network-shuffle_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.13/3.2.1/spark-network-shuffle_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-unsafe_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-unsafe_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.13/3.2.0/spark-unsafe_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.13/3.2.1/spark-unsafe_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-unsafe_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.13/3.2.0/spark-unsafe_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.13/3.2.1/spark-unsafe_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
@@ -1320,34 +1320,34 @@
                 {
                     "organization": "net.sf.py4j",
                     "name": "py4j",
-                    "version": "0.10.9.2",
+                    "version": "0.10.9.3",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "py4j",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/py4j/py4j/0.10.9.2/py4j-0.10.9.2.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/py4j/py4j/0.10.9.3/py4j-0.10.9.3.jar"
                         },
                         {
                             "name": "py4j",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/py4j/py4j/0.10.9.2/py4j-0.10.9.2-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/py4j/py4j/0.10.9.3/py4j-0.10.9.3-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-tags_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-tags_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-tags_2.13/3.2.0/spark-tags_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-tags_2.13/3.2.1/spark-tags_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-tags_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-tags_2.13/3.2.0/spark-tags_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-tags_2.13/3.2.1/spark-tags_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
@@ -1422,68 +1422,68 @@
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-sketch_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-sketch_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.13/3.2.0/spark-sketch_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.13/3.2.1/spark-sketch_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-sketch_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.13/3.2.0/spark-sketch_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.13/3.2.1/spark-sketch_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.spark",
                     "name": "spark-catalyst_2.13",
-                    "version": "3.2.0",
+                    "version": "3.2.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "spark-catalyst_2.13",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.13/3.2.0/spark-catalyst_2.13-3.2.0.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.13/3.2.1/spark-catalyst_2.13-3.2.1.jar"
                         },
                         {
                             "name": "spark-catalyst_2.13",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.13/3.2.0/spark-catalyst_2.13-3.2.0-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.13/3.2.1/spark-catalyst_2.13-3.2.1-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.orc",
                     "name": "orc-core",
-                    "version": "1.6.11",
+                    "version": "1.6.12",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "orc-core",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-core/1.6.11/orc-core-1.6.11.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-core/1.6.12/orc-core-1.6.12.jar"
                         },
                         {
                             "name": "orc-core",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-core/1.6.11/orc-core-1.6.11-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-core/1.6.12/orc-core-1.6.12-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.orc",
                     "name": "orc-mapreduce",
-                    "version": "1.6.11",
+                    "version": "1.6.12",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "orc-mapreduce",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-mapreduce/1.6.11/orc-mapreduce-1.6.11.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-mapreduce/1.6.12/orc-mapreduce-1.6.12.jar"
                         },
                         {
                             "name": "orc-mapreduce",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-mapreduce/1.6.11/orc-mapreduce-1.6.11-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-mapreduce/1.6.12/orc-mapreduce-1.6.12-sources.jar"
                         }
                     ]
                 },
@@ -1507,34 +1507,34 @@
                 {
                     "organization": "org.apache.parquet",
                     "name": "parquet-column",
-                    "version": "1.12.1",
+                    "version": "1.12.2",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "parquet-column",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-column/1.12.1/parquet-column-1.12.1.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-column/1.12.2/parquet-column-1.12.2.jar"
                         },
                         {
                             "name": "parquet-column",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-column/1.12.1/parquet-column-1.12.1-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-column/1.12.2/parquet-column-1.12.2-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.parquet",
                     "name": "parquet-hadoop",
-                    "version": "1.12.1",
+                    "version": "1.12.2",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "parquet-hadoop",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-hadoop/1.12.1/parquet-hadoop-1.12.1.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-hadoop/1.12.2/parquet-hadoop-1.12.2.jar"
                         },
                         {
                             "name": "parquet-hadoop",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-hadoop/1.12.1/parquet-hadoop-1.12.1-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-hadoop/1.12.2/parquet-hadoop-1.12.2-sources.jar"
                         }
                     ]
                 },
@@ -2296,17 +2296,17 @@
                 {
                     "organization": "org.apache.orc",
                     "name": "orc-shims",
-                    "version": "1.6.11",
+                    "version": "1.6.12",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "orc-shims",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-shims/1.6.11/orc-shims-1.6.11.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-shims/1.6.12/orc-shims-1.6.12.jar"
                         },
                         {
                             "name": "orc-shims",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-shims/1.6.11/orc-shims-1.6.11-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/orc/orc-shims/1.6.12/orc-shims-1.6.12-sources.jar"
                         }
                     ]
                 },
@@ -2364,68 +2364,68 @@
                 {
                     "organization": "org.apache.parquet",
                     "name": "parquet-common",
-                    "version": "1.12.1",
+                    "version": "1.12.2",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "parquet-common",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-common/1.12.1/parquet-common-1.12.1.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-common/1.12.2/parquet-common-1.12.2.jar"
                         },
                         {
                             "name": "parquet-common",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-common/1.12.1/parquet-common-1.12.1-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-common/1.12.2/parquet-common-1.12.2-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.parquet",
                     "name": "parquet-encoding",
-                    "version": "1.12.1",
+                    "version": "1.12.2",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "parquet-encoding",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-encoding/1.12.1/parquet-encoding-1.12.1.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-encoding/1.12.2/parquet-encoding-1.12.2.jar"
                         },
                         {
                             "name": "parquet-encoding",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-encoding/1.12.1/parquet-encoding-1.12.1-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-encoding/1.12.2/parquet-encoding-1.12.2-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.parquet",
                     "name": "parquet-format-structures",
-                    "version": "1.12.1",
+                    "version": "1.12.2",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "parquet-format-structures",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-format-structures/1.12.1/parquet-format-structures-1.12.1.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-format-structures/1.12.2/parquet-format-structures-1.12.2.jar"
                         },
                         {
                             "name": "parquet-format-structures",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-format-structures/1.12.1/parquet-format-structures-1.12.1-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-format-structures/1.12.2/parquet-format-structures-1.12.2-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.apache.parquet",
                     "name": "parquet-jackson",
-                    "version": "1.12.1",
+                    "version": "1.12.2",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "parquet-jackson",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-jackson/1.12.1/parquet-jackson-1.12.1.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-jackson/1.12.2/parquet-jackson-1.12.2.jar"
                         },
                         {
                             "name": "parquet-jackson",
                             "classifier": "sources",
-                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-jackson/1.12.1/parquet-jackson-1.12.1-sources.jar"
+                            "path": "/Users/RoverOne/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/parquet/parquet-jackson/1.12.2/parquet-jackson-1.12.2-sources.jar"
                         }
                     ]
                 },
