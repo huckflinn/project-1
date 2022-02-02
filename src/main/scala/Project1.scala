@@ -45,7 +45,7 @@ object Project1 {
         val driver = "com.mysql.jdbc.Driver"
         val url = "jdbc:mysql://localhost:3306/project1"
         val username = "root"
-        val password = "####"
+        val password = "y6F*_03jgN2"
 
         Class.forName(driver)
         val connection = DriverManager.getConnection(url, username, password)
@@ -507,36 +507,30 @@ object Project1 {
     def highestTotalVaccinations(): Unit = {
         val result = hiveCtx.sql("SELECT DISTINCT location, (MAX)total_vaccinations FROM covid_vax_data_partitioned GROUP BY location DESC LIMIT 10")
         result.show()
-        // result.write.csv("results/highestTotalVaccinations.csv")
     }
 
     def lowestTotalVaccinations(): Unit = {
         val result = hiveCtx.sql("SELECT DISTINCT location, Max(total_vaccinations) FROM covid_vax_data_partitioned GROUP BY location ASC LIMIT 10")
         result.show()
-        // result.write.csv("results/lowestTotalVaccinations.csv")
     }
 
     def highestVaxRates(): Unit = {
         val result = hiveCtx.sql("SELECT DISTINCT location, MAX(people_fully_vaccinated_per_hundred) FROM covid_vax_data_partitioned GROUP BY location DESC LIMIT 10")
         result.show()
-        // result.write.csv("results/highestVaxRates.csv")
     }
 
     def lowestVaxRates(): Unit = {
         val result = hiveCtx.sql("SELECT DISTINCT location, MAX(people_fully_vaccinated_per_hundred) FROM covid_vax_data_partitioned GROUP BY location ASC LIMIT 10")
         result.show()
-        // result.write.csv("results/lowestVaxRates.csv")
     }
 
     def fastestToMillion(): Unit = {
         val result = hiveCtx.sql("SELECT date, location FROM covid_vax_data_partitioned WHERE people_fully_vaccinated > 1000000 ORDER BY date ASC LIMIT 1")
         result.show()
-        // result.write.csv("results/fastestToMillion.csv")
     }
 
     def lowestFullyVaxxed(): Unit = {
         val result = hiveCtx.sql("SELECT location, MIN(people_fully_vaccinated) FROM covid_vax_data_partitioned")
         result.show()
-        // result.write.csv("results/lowestFullyVaxxed.csv")
     }
 }
