@@ -16,7 +16,6 @@ object Project1 {
 
     System.setSecurityManager(null)
     System.setProperty("hadoop.home.dir", "/usr/local/Cellar/hadoop/3.3.1/libexec")
-    private var scanner = new Scanner(System.in)
     private var statement: Statement = null
     private val log = new PrintWriter(new File("query.log"))
     private var resultSet: ResultSet = null
@@ -48,40 +47,45 @@ object Project1 {
         val username = "root"
         val password = "y6F*_03jgN2"
 
-        scanner.useDelimiter(System.lineSeparator())
-        // Tried commenting this out and changing all instances of "scanner.next().toString()" to "scanner.nextLine().trim()". No dice.
-
         Class.forName(driver)
         val connection = DriverManager.getConnection(url, username, password)
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-        // Run method to insert Covid data. Only needs to be ran initially, then table data1 will be persisted.
-        // insertCovidData(hiveCtx)
+        var scanner = new Scanner(System.in)
 
-        mainMenu()
+        mainMenu(scanner)
 
         sc.stop()
         connection.close()
         log.close()
         println("You have exited the program. Bye!")
+        scanner.close()
 
     }
 
-    def mainMenu(): Unit = {
+    def mainMenu(scanner: Scanner): Unit = {
         var continue = true
 
         while(continue) {
-            var nextStep = getInput()
+            println("")
+            println("Welcome!")
+            println("Please select from the options below. Simply type 1, 2, or 3, then hit \"enter\".")
+            println("")
+            println("1: Create account")
+            println("2: Log in")
+            println("3: Exit")
+            println("")
+            var nextStep = scanner.nextLine().trim()
 
             if (nextStep == "1") {
-                createAccount()
+                createAccount(scanner)
             }
 
             if (nextStep == "2") {
-                login()
+                login(scanner)
                 var accountType = loggedInUser.getString("user_type")
-                if (accountType == "user") userMenu()
-                else adminMenu()
+                if (accountType == "user") userMenu(scanner)
+                else adminMenu(scanner)
             }
 
             if (nextStep == "3") {
@@ -90,20 +94,7 @@ object Project1 {
         }
     }
 
-    def getInput(): String = {
-        println("")
-        println("Welcome!")
-        println("Please select from the options below. Simply type 1, 2, or 3, then hit \"enter\".")
-        println("")
-        println("1: Create account")
-        println("2: Log in")
-        println("3: Exit")
-        println("")
-
-        return scanner.nextLine().trim()
-    }
-
-    def createAccount(): Unit = {
+    def createAccount(scanner: Scanner): Unit = {
         var resultSet = statement.executeQuery("SELECT username FROM users;")
         log.write("Executing 'SELECT username FROM users;'")
         println("")
@@ -192,7 +183,7 @@ object Project1 {
         loggedInUser.beforeFirst()
     }
 
-    def login(): Unit = {    
+    def login(scanner: Scanner): Unit = {
         var loginAttempt = true
         while (loginAttempt) {
             loginAttempt = false
@@ -225,7 +216,7 @@ object Project1 {
         }
     }
 
-    def userMenu(): Unit = {
+    def userMenu(scanner: Scanner): Unit = {
         var continueUserMenu = true
         while (continueUserMenu) {
             println("")
@@ -238,13 +229,12 @@ object Project1 {
             var userChoice = scanner.nextLine().trim()
 
             if (userChoice == "1") {
-                covidDataMenu()
+                covidDataMenu(scanner)
             }
             else if (userChoice == "2") {
                 continueUserMenu = false
                 println("")
                 println("Thanks for stopping by!")
-                // mainMenu()
             }
             else {
                 println("")
@@ -253,7 +243,7 @@ object Project1 {
         }
     }
 
-    def adminMenu(): Unit = {
+    def adminMenu(scanner: Scanner): Unit = {
         var continueAdminMenu = true
         while (continueAdminMenu) {
             println("")
@@ -268,17 +258,16 @@ object Project1 {
 
             if (adminChoice == "1") {
                 continueAdminMenu = false
-                viewUsersTable()
+                viewUsersTable(scanner)
             }
             else if (adminChoice == "2") {
                 continueAdminMenu = false
-                covidDataMenu()
+                covidDataMenu(scanner)
             }
             else if (adminChoice == "3") {
                 continueAdminMenu = false
                 println("")
                 println("Thanks for stopping by!")
-                // mainMenu()
             }
             else {
                 println("")
@@ -292,7 +281,7 @@ object Project1 {
         usersTable = statement.executeQuery(s"SELECT * FROM users")
     }
 
-    def viewUsersTable(): Unit = {
+    def viewUsersTable(scanner: Scanner): Unit = {
         var continueUsersTable = true
         while (continueUsersTable) {
             println("")
@@ -315,17 +304,18 @@ object Project1 {
 
             if (choice == "1") {
                 continueUsersTable = false
-                editUser()
+                editUser(scanner)
             }
 
             else if (choice == "2") {
-                deleteUser()
+                deleteUser(scanner)
             }
 
             else if (choice == "3") {
                 continueUsersTable = false
-                if (loggedInAccountType == "user") userMenu()
-                else adminMenu()
+                adminMenu(scanner)
+                // if (loggedInAccountType == "user") userMenu(scanner)
+                // else adminMenu(scanner)
             }
         }
     }
@@ -336,7 +326,7 @@ object Project1 {
     }
 
 
-    def editUser(): Unit = {
+    def editUser(scanner: Scanner): Unit = {
         var continueEditUser = true
         while (continueEditUser) {
             println("")
@@ -407,7 +397,7 @@ object Project1 {
                     else if (whichInfo == "4") {
                         continueEditUser = false
                         continueWhichInfo = false
-                        viewUsersTable()
+                        viewUsersTable(scanner)
                     }
 
                     else {
@@ -419,7 +409,7 @@ object Project1 {
         }
     }
 
-    def deleteUser(): Unit = {
+    def deleteUser(scanner: Scanner): Unit = {
         var continueDeleteUser = true
         while (continueDeleteUser) {
             println("")
@@ -446,7 +436,7 @@ object Project1 {
         }
     }
 
-    def covidDataMenu(): Unit = {
+    def covidDataMenu(scanner: Scanner): Unit = {
         insertCovidData(hiveCtx)
         var continueCovidMenu = true
         while (continueCovidMenu) {
@@ -457,11 +447,10 @@ object Project1 {
             println("3: US states with the highest vaccination rates.")
             println("4: US states with the highest vaccination rates.")
             println("5: Fastest US states to reach 1 million people fully vaccinated.")
-            println("6: Slowest US states to reach 1 million people fully vaccinated.")
+            println("6: US state with lowest number of fully vaccinated people.")
             println("7: Back")
             println("")
-            // var userChoice = scanner.nextLine().trim()
-            var userChoice = scanner.next().toString()
+            var userChoice = scanner.nextLine().trim()
 
             if (userChoice == "1") {
                 highestTotalVaccinations()
@@ -479,11 +468,12 @@ object Project1 {
                 fastestToMillion()
             }
             else if (userChoice == "6") {
-                slowestToMillion()
+                lowestFullyVaxxed()
             }
             else if (userChoice == "7") {
                 continueCovidMenu = false
-                adminMenu()
+                if (loggedInAccountType == "user") userMenu(scanner)
+                else adminMenu(scanner)
             }
             else {
                 println("")
@@ -506,47 +496,47 @@ object Project1 {
         hiveCtx.sql("SET hive.enforce.sorting=false")
         hiveCtx.sql("CREATE TABLE IF NOT EXISTS covid_vax_data (date string, location string, total_vaccinations double, total_distributed double, people_vaccinated double, people_fully_vaccinated_per_hundred float, total_vaccinations_per_hundred float, people_fully_vaccinated double, people_vaccinated_per_hundred float, distributed_per_hundred float, daily_vaccinations_raw double, daily_vaccinations double, daily_vaccinations_per_million double, share_doses_used float, total_boosters INT, total_boosters_per_hundred float) row format delimited fields terminated by ',' stored as textfile")
         hiveCtx.sql("ALTER TABLE covid_vax_data SET TBLPROPERTIES (\"skip.header.line.count\"=\"1\")")
-        hiveCtx.sql("INSERT INTO covid_vax_data SELECT * FROM temp_data")
+        hiveCtx.sql("INSERT OVERWRITE covid_vax_data SELECT * FROM temp_data")
         hiveCtx.sql("CREATE TABLE IF NOT EXISTS covid_vax_data_partitioned (date string, total_vaccinations double, total_distributed double, people_vaccinated double, people_fully_vaccinated_per_hundred float, total_vaccinations_per_hundred float, people_fully_vaccinated double, people_vaccinated_per_hundred float, distributed_per_hundred float, daily_vaccinations_raw double, daily_vaccinations double, daily_vaccinations_per_million double, share_doses_used float, total_boosters INT, total_boosters_per_hundred float) PARTITIONED BY (location string) CLUSTERED BY (date) INTO 10 BUCKETS row format delimited fields terminated by ',' stored as textfile")
-        hiveCtx.sql("INSERT INTO covid_vax_data_partitioned SELECT date, total_vaccinations, total_distributed, people_vaccinated, people_fully_vaccinated_per_hundred, total_vaccinations_per_hundred, people_fully_vaccinated, people_vaccinated_per_hundred, distributed_per_hundred, daily_vaccinations_raw, daily_vaccinations, daily_vaccinations_per_million, share_doses_used, total_boosters, total_boosters_per_hundred, location FROM covid_vax_data")
+        hiveCtx.sql("INSERT OVERWRITE covid_vax_data_partitioned SELECT date, total_vaccinations, total_distributed, people_vaccinated, people_fully_vaccinated_per_hundred, total_vaccinations_per_hundred, people_fully_vaccinated, people_vaccinated_per_hundred, distributed_per_hundred, daily_vaccinations_raw, daily_vaccinations, daily_vaccinations_per_million, share_doses_used, total_boosters, total_boosters_per_hundred, location FROM covid_vax_data")
 
         val summary = hiveCtx.sql("SELECT * FROM covid_vax_data_partitioned LIMIT 10")
         summary.show()
     }
 
     def highestTotalVaccinations(): Unit = {
-        val result = hiveCtx.sql("SELECT location, total_vaccinations FROM covid_vax_data_partitioned WHERE date = '2022-01-26' ORDER BY total_vaccinations DESC LIMIT 10")
+        val result = hiveCtx.sql("SELECT DISTINCT location, (MAX)total_vaccinations FROM covid_vax_data_partitioned GROUP BY location DESC LIMIT 10")
         result.show()
-        result.write.csv("results/highestTotalVaccinations.csv")
+        // result.write.csv("results/highestTotalVaccinations.csv")
     }
 
     def lowestTotalVaccinations(): Unit = {
-        val result = hiveCtx.sql("SELECT location, total_vaccinations FROM covid_vax_data_partitioned WHERE date = '2022-01-26' ORDER BY total_vaccinations ASC LIMIT 10")
+        val result = hiveCtx.sql("SELECT DISTINCT location, Max(total_vaccinations) FROM covid_vax_data_partitioned GROUP BY location ASC LIMIT 10")
         result.show()
-        result.write.csv("results/lowestTotalVaccinations.csv")
+        // result.write.csv("results/lowestTotalVaccinations.csv")
     }
 
     def highestVaxRates(): Unit = {
-        val result = hiveCtx.sql("SELECT location, people_fully_vaccinated_per_hundred FROM covid_vax_data_partitioned WHERE date = '2022-01-26' ORDER BY people_fully_vaccinated_per_hundred DESC LIMIT 10")
+        val result = hiveCtx.sql("SELECT DISTINCT location, MAX(people_fully_vaccinated_per_hundred) FROM covid_vax_data_partitioned GROUP BY location DESC LIMIT 10")
         result.show()
-        result.write.csv("results/highestVaxRates.csv")
+        // result.write.csv("results/highestVaxRates.csv")
     }
 
     def lowestVaxRates(): Unit = {
-        val result = hiveCtx.sql("SELECT location, people_fully_vaccinated_per_hundred FROM covid_vax_data_partitioned WHERE date = '2022-01-26' ORDER BY people_fully_vaccinated_per_hundred ASC LIMIT 10")
+        val result = hiveCtx.sql("SELECT DISTINCT location, MAX(people_fully_vaccinated_per_hundred) FROM covid_vax_data_partitioned GROUP BY location ASC LIMIT 10")
         result.show()
-        result.write.csv("results/lowestVaxRates.csv")
+        // result.write.csv("results/lowestVaxRates.csv")
     }
 
     def fastestToMillion(): Unit = {
-        val result = hiveCtx.sql("SELECT date, location FROM table WHERE people_fully_vaccinated > 1000000 ORDER BY date ASC LIMIT 1")
+        val result = hiveCtx.sql("SELECT date, location FROM covid_vax_data_partitioned WHERE people_fully_vaccinated > 1000000 ORDER BY date ASC LIMIT 1")
         result.show()
-        result.write.csv("results/fastestToMillion.csv")
+        // result.write.csv("results/fastestToMillion.csv")
     }
 
-    def slowestToMillion(): Unit = {
-        val result = hiveCtx.sql("SELECT date, location FROM table WHERE people_fully_vaccinated > 1000000 ORDER BY date DESC LIMIT 1")
+    def lowestFullyVaxxed(): Unit = {
+        val result = hiveCtx.sql("SELECT location, MIN(people_fully_vaccinated) FROM covid_vax_data_partitioned")
         result.show()
-        result.write.csv("results/slowestToMillion.csv")
+        // result.write.csv("results/lowestFullyVaxxed.csv")
     }
 }

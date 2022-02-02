@@ -1,43 +1,41 @@
-[0m[[0m[31merror[0m] [0m[0morg.apache.spark.sql.AnalysisException: Cannot write incompatible data to table '`default`.`covid_vax_data`':[0m
-[0m[[0m[31merror[0m] [0m[0m- Cannot safely cast 'total_boosters': string to int[0m
-[0m[[0m[31merror[0m] [0m[0m- Cannot safely cast 'total_boosters_per_hundred': string to float[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.errors.QueryCompilationErrors$.cannotWriteIncompatibleDataToTableError(QueryCompilationErrors.scala:1523)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.TableOutputResolver$.resolveOutputColumns(TableOutputResolver.scala:67)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.datasources.PreprocessTableInsertion$.org$apache$spark$sql$execution$datasources$PreprocessTableInsertion$$preprocess(rules.scala:397)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.datasources.PreprocessTableInsertion$$anonfun$apply$3.applyOrElse(rules.scala:418)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.datasources.PreprocessTableInsertion$$anonfun$apply$3.applyOrElse(rules.scala:412)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.$anonfun$resolveOperatorsDownWithPruning$2(AnalysisHelper.scala:170)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:82)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.$anonfun$resolveOperatorsDownWithPruning$1(AnalysisHelper.scala:170)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.allowInvokingTransformsInAnalyzer(AnalysisHelper.scala:323)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperatorsDownWithPruning(AnalysisHelper.scala:168)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperatorsDownWithPruning$(AnalysisHelper.scala:164)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperatorsDownWithPruning(LogicalPlan.scala:30)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperatorsWithPruning(AnalysisHelper.scala:99)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperatorsWithPruning$(AnalysisHelper.scala:96)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperatorsWithPruning(LogicalPlan.scala:30)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperators(AnalysisHelper.scala:76)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.resolveOperators$(AnalysisHelper.scala:75)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperators(LogicalPlan.scala:30)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.datasources.PreprocessTableInsertion$.apply(rules.scala:412)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.datasources.PreprocessTableInsertion$.apply(rules.scala:366)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$2(RuleExecutor.scala:211)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:169)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:165)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.foldLeft(List.scala:79)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1(RuleExecutor.scala:208)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1$adapted(RuleExecutor.scala:200)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.foreach(List.scala:333)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:200)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.org$apache$spark$sql$catalyst$analysis$Analyzer$$executeSameContext(Analyzer.scala:215)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:209)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:172)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$executeAndTrack$1(RuleExecutor.scala:179)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.QueryPlanningTracker$.withTracker(QueryPlanningTracker.scala:88)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.rules.RuleExecutor.executeAndTrack(RuleExecutor.scala:179)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:193)[0m
+[0m[[0m[31merror[0m] [0m[0morg.apache.spark.sql.AnalysisException: Table or view not found: table; line 1 pos 27;[0m
+[0m[[0m[31merror[0m] [0m[0m'GlobalLimit 1[0m
+[0m[[0m[31merror[0m] [0m[0m+- 'LocalLimit 1[0m
+[0m[[0m[31merror[0m] [0m[0m   +- 'Sort ['date ASC NULLS FIRST], true[0m
+[0m[[0m[31merror[0m] [0m[0m      +- 'Project ['date, 'location][0m
+[0m[[0m[31merror[0m] [0m[0m         +- 'Filter ('people_fully_vaccinated > 1000000)[0m
+[0m[[0m[31merror[0m] [0m[0m            +- 'UnresolvedRelation [table], [], false[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$1(CheckAnalysis.scala:123)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$1$adapted(CheckAnalysis.scala:94)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:263)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Vector.foreach(Vector.scala:1856)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Vector.foreach(Vector.scala:1856)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Vector.foreach(Vector.scala:1856)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Vector.foreach(Vector.scala:1856)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Vector.foreach(Vector.scala:1856)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:262)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:94)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:182)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:205)[0m
 [0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)[0m
-[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:192)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:202)[0m
 [0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:88)[0m
 [0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:111)[0m
 [0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:196)[0m
@@ -53,11 +51,11 @@
 [0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)[0m
 [0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:613)[0m
 [0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:651)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.insertCovidData(Project1.scala:507)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.covidDataMenu(Project1.scala:449)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.adminMenu(Project1.scala:274)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.mainMenu(Project1.scala:85)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Project1$.main(Project1.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.fastestToMillion(Project1.scala:535)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.covidDataMenu(Project1.scala:471)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.adminMenu(Project1.scala:263)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.mainMenu(Project1.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.main(Project1.scala:56)[0m
 [0m[[0m[31merror[0m] [0m[0m	at Project1.main(Project1.scala)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)[0m
@@ -76,6 +74,10 @@
 [0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:748)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) org.apache.spark.sql.AnalysisException: Cannot write incompatible data to table '`default`.`covid_vax_data`':[0m
-[0m[[0m[31merror[0m] [0m[0m- Cannot safely cast 'total_boosters': string to int[0m
-[0m[[0m[31merror[0m] [0m[0m- Cannot safely cast 'total_boosters_per_hundred': string to float[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) org.apache.spark.sql.AnalysisException: Table or view not found: table; line 1 pos 27;[0m
+[0m[[0m[31merror[0m] [0m[0m'GlobalLimit 1[0m
+[0m[[0m[31merror[0m] [0m[0m+- 'LocalLimit 1[0m
+[0m[[0m[31merror[0m] [0m[0m   +- 'Sort ['date ASC NULLS FIRST], true[0m
+[0m[[0m[31merror[0m] [0m[0m      +- 'Project ['date, 'location][0m
+[0m[[0m[31merror[0m] [0m[0m         +- 'Filter ('people_fully_vaccinated > 1000000)[0m
+[0m[[0m[31merror[0m] [0m[0m            +- 'UnresolvedRelation [table], [], false[0m
