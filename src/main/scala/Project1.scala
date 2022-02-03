@@ -32,14 +32,7 @@ object Project1 {
 
     def main(args: Array[String]): Unit = {
 
-        // System.setSecurityManager(null)
-        // System.setProperty("hadoop.home.dir", "C:\\hadoop\\") // change if winutils.exe is in a different bin folder
-        // val conf = new SparkConf()
-        //     .setMaster("local") 
-        //     .setAppName("Project1")
-        // val sc = new SparkContext(conf)
         sc.setLogLevel("ERROR")
-        // hiveCtx = new HiveContext(sc)
         import hiveCtx.implicits._
 
         val driver = "com.mysql.jdbc.Driver"
@@ -314,8 +307,6 @@ object Project1 {
             else if (choice == "3") {
                 continueUsersTable = false
                 adminMenu(scanner)
-                // if (loggedInAccountType == "user") userMenu(scanner)
-                // else adminMenu(scanner)
             }
         }
     }
@@ -488,6 +479,7 @@ object Project1 {
         .option("inferSchema", "true")
         .option("header", "true")
         .load("input/us_state_vaccinations.csv")
+        .filter("location != 'American Samoa'").filter("location != 'Bureau of Prisons'").filter("location != 'Dept of Defense'").filter("location != 'District of Columbia'").filter("location != 'Federated States of Micronesia'").filter("location != 'Guam'").filter("location != 'Indian Health Svc'").filter("location != 'Long Term Care'").filter("location != 'Marshall Islands'").filter("location != 'Northern Mariana Islands'").filter("location != 'Puerto Rico'").filter("location != 'Republic of Palau'").filter("location != 'United States'").filter("location != 'Veterans Health'").filter("location != 'Virgin Islands'")
         output.limit(15).show()
 
         output.createOrReplaceTempView("temp_data")
@@ -505,22 +497,22 @@ object Project1 {
     }
 
     def highestTotalVaccinations(): Unit = {
-        val result = hiveCtx.sql("SELECT DISTINCT location, (MAX)total_vaccinations FROM covid_vax_data_partitioned GROUP BY location DESC LIMIT 10")
+        val result = hiveCtx.sql("SELECT DISTINCT location, MAX(total_vaccinations) most_vax FROM covid_vax_data_partitioned GROUP BY location ORDER BY most_vax DESC LIMIT 10")
         result.show()
     }
 
     def lowestTotalVaccinations(): Unit = {
-        val result = hiveCtx.sql("SELECT DISTINCT location, Max(total_vaccinations) FROM covid_vax_data_partitioned GROUP BY location ASC LIMIT 10")
+        val result = hiveCtx.sql("SELECT DISTINCT location, MAX(total_vaccinations) least_vax FROM covid_vax_data_partitioned GROUP BY location ORDER BY least_vax ASC LIMIT 10")
         result.show()
     }
 
     def highestVaxRates(): Unit = {
-        val result = hiveCtx.sql("SELECT DISTINCT location, MAX(people_fully_vaccinated_per_hundred) FROM covid_vax_data_partitioned GROUP BY location DESC LIMIT 10")
+        val result = hiveCtx.sql("SELECT DISTINCT location, MAX(people_fully_vaccinated_per_hundred) highest_rate FROM covid_vax_data_partitioned GROUP BY location ORDER BY highest_rate DESC LIMIT 10")
         result.show()
     }
 
     def lowestVaxRates(): Unit = {
-        val result = hiveCtx.sql("SELECT DISTINCT location, MAX(people_fully_vaccinated_per_hundred) FROM covid_vax_data_partitioned GROUP BY location ASC LIMIT 10")
+        val result = hiveCtx.sql("SELECT DISTINCT location, MAX(people_fully_vaccinated_per_hundred) lowest_rate FROM covid_vax_data_partitioned GROUP BY location ORDER BY lowest_rate ASC LIMIT 10")
         result.show()
     }
 
@@ -530,7 +522,7 @@ object Project1 {
     }
 
     def lowestFullyVaxxed(): Unit = {
-        val result = hiveCtx.sql("SELECT location, MIN(people_fully_vaccinated) FROM covid_vax_data_partitioned")
+        val result = hiveCtx.sql("SELECT location, MIN(people_fully_vaccinated) fewest_fully_vaxxed FROM covid_vax_data_partitioned WHERE date = '2022-01-26' GROUP BY location ORDER BY fewest_fully_vaxxed ASC LIMIT 1")
         result.show()
     }
 }
