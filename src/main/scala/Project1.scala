@@ -38,7 +38,7 @@ object Project1 {
         val driver = "com.mysql.jdbc.Driver"
         val url = "jdbc:mysql://localhost:3306/project1"
         val username = "root"
-        val password = "y6F*_03jgN2"
+        val password = "##"
 
         Class.forName(driver)
         val connection = DriverManager.getConnection(url, username, password)
