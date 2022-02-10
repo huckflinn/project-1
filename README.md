@@ -1,29 +1,17 @@
 # Project 1
-Project 1 will be a Scala console application that is retrieving data using Hive or MapReduce. Your job is to build a real-time news analyzer. This application should allow users to view the trending topics (e.g. all trending topics for news related to "politics", "tv shows", "movies", "video games", or "sports" only [choose one topic for project]).
-You must present a project proposal to trainer and be approved before proceeding with project.
-## MVP:
-- ALL user interaction must come purely from the console application
-- Hive/MapReduce must:
-  - scrape data from datasets from an API based on your topic of choice
-- Your console application must:
-  - query data to answer at least 6 analysis questions of your choice
-  - have a login system for all users with passwords
-    - 2 types of users: BASIC and ADMIN
-    - Users should also be able to update username and password
-  - implement all CRUD operations
-  - implement bucketing, and partitioning
-  - can use hive with screenshots but make as program in VSCode too with appropriate dependencies
-## Stretch Goals:
-- Passwords must be encrypted
-- Export all results into a JSON file
-- find a trend
-## Presentations
-- You will be asked to run an analysis using the console application on the day of the presentation, so be prepared to do so.
-- We'll have 5 minutes a piece, so make sure your presentation can be covered in that time, focusing on the parts of your analysis you find most interesting.
+Project 1 is a Scala command-line interface application that retrieves and analyzes COVID-19 vaccination data in the US. 
+## Functionality
+- Allows user/admin login with different levels of access privileges
+- Scrapes data from COVID-19 dataset
+- Organizes data into partitioned and bucketed tables
+- Allows users to execute 6 pre-written queries to find pertinent information about the state of the COVID-19 pandemic in the US
+- Admin users can view and edit the users table with full CRUD
 ## Technologies
-- Hadoop MapReduce
-- YARN(by default)
-- HDFS
-- Scala 2.11 (or 2.12)
-- Hive
+- Hadoop 3.3.1 (MapReduce, YARN, HDFS)
+- Scala 2.13.7
+- SBT 1.6.1
+- MySQL 8.0.26
+- Hive 3.1.2
+- Spark 3.2.1
 - Git + GitHub
+- VSCode
