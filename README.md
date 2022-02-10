@@ -10,20 +10,20 @@ You must present a project proposal to trainer and be approved before proceeding
   - have a login system for all users with passwords
     - 2 types of users: BASIC and ADMIN
     - Users should also be able to update username and password
-implement all CRUD operations
-implement bucketing, and partitioning
-can use hive with screenshots but make as program in VSCode too with appropriate dependencies
-Stretch Goals:
-Passwords must be encrypted
-Export all results into a JSON file
-find a trend
-Presentations
-You will be asked to run an analysis using the console application on the day of the presentation, so be prepared to do so.
-We'll have 5 minutes a piece, so make sure your presentation can be covered in that time, focusing on the parts of your analysis you find most interesting.
-Technologies
-Hadoop MapReduce
-YARN(by default)
-HDFS
-Scala 2.11 (or 2.12)
-Hive
-Git + GitHub
+  - implement all CRUD operations
+  - implement bucketing, and partitioning
+  - can use hive with screenshots but make as program in VSCode too with appropriate dependencies
+## Stretch Goals:
+- Passwords must be encrypted
+- Export all results into a JSON file
+- find a trend
+## Presentations
+- You will be asked to run an analysis using the console application on the day of the presentation, so be prepared to do so.
+- We'll have 5 minutes a piece, so make sure your presentation can be covered in that time, focusing on the parts of your analysis you find most interesting.
+## Technologies
+- Hadoop MapReduce
+- YARN(by default)
+- HDFS
+- Scala 2.11 (or 2.12)
+- Hive
+- Git + GitHub
